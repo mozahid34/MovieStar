@@ -9,7 +9,7 @@
         <h1 class="logo display-3">Movie Star..</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus sit ullam inventore omnis architecto delectus autem eos placeat sed a. Voluptate esse consequatur earum nesciunt repellendus perspiciatis, labore delectus vel.</p>
 
-        <form [formGroup]="newform" (ngSubmit)="onLogIn()" class="col col-sm-12 col-md-5 logIn">
+        <form [formGroup]="newform" (ngSubmit)="onLogIn()" class="col col-sm-12 col-lg-6 logIn">
             <h2>LogIn</h2>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -21,7 +21,7 @@
               <input type="password" name="password" formControlName="pass" class="form-control" id="exampleInputPassword1">
             </div>
             <div class="btn-container">
-                <div class="bg-danger text-light">{{errMsg}}</div>
+                <div *ngIf="errMsg" class="bg-danger text-light px-3 m-4"> <span> {{errMsg}} </span> </div>
             <button type="submit" ngModel class="btn btn-primary">LogIn</button>
         </div>
           </form>

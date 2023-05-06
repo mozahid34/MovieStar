@@ -5,6 +5,8 @@ body {
 img {
     width: 100%;
     padding-top: 20px;
+    position: absulate;
+    top: 50px;
 }
 
 .logo {
