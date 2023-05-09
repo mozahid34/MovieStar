@@ -1,0 +1,15 @@
+.movie {
+    display: flex;
+    justify-content: space-between;
+}
+.box {
+    height:550px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.box::-webkit-scrollbar {
+    display: none;
+}
+.list {
+    display: flex;
+}

@@ -1,6 +1,6 @@
 <div>
     <app-header></app-header>
-    <div>
+    <div class="container">
       <div class="row">
         <div class="col col-sm-12 col-md-9 border-end">
           <div class="col col-12">
@@ -8,26 +8,105 @@
             <h3>Trending Now</h3>
             <button class="btn">View All</button>
           </div>
-          <p>Content Goes heree... Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium blanditiis, quaerat assumenda aperiam repellendus placeat fugiat minima, quis totam dolorem doloribus ex non. Vero eum alias a quis obcaecati inventore.</p>
+          <!-- Content Goes here -->
+
+
+          <div class="row">
+
+          <div  *ngFor="let movie of trendingMovies">
+            <div class="col col-sm-12 col-md-4 card m-2" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">Movie Name:{{movie.name}} </h5>
+                <p>
+                  Rating:
+                <app-star [rating] = "movie.rating" [readonly]="false"  ></app-star>
+              </p>
+                <a (click)="gotoMovie('trending', movie.id)" class="btn btn-primary">Details</a>
+              </div>
+            </div>
+        </div>
+
+      </div>
+
+            <!-- ---------------------Test Content Start------------------ -->
+
+                <div class="row">
+                  <div class="col col-sm-12">
+
+                  </div>
+                </div>
+
+
+
+
+
+
+
+
+
+            <!-- ---------------------Test Content End------------------ -->
+        
+          
+
+          <!-- Content End -->
           </div>
           <div class="col col-12">
             <div class="d-flex justify-content-between">
-            <h3>Trending Now</h3>
+            <h3>Popular Movies</h3>
             <button class="btn">View All</button>
-          </div>
-          <p>Content Goes heree... Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium blanditiis, quaerat assumenda aperiam repellendus placeat fugiat minima, quis totam dolorem doloribus ex non. Vero eum alias a quis obcaecati inventore.</p>
-          </div>
-          <div class="col col-12">
-            <div class="d-flex justify-content-between">
-            <h3>Trending Now</h3>
-            <button class="btn">View All</button>
-          </div>
-          <p>Content Goes heree... Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium blanditiis, quaerat assumenda aperiam repellendus placeat fugiat minima, quis totam dolorem doloribus ex non. Vero eum alias a quis obcaecati inventore.</p>
           </div>
 
+          <div class="row" *ngFor="let movie of popularMovies">
+            <div class="card m-2" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">{{movie.name}} </h5>
+                <p>
+                <app-star [rating] = "movie.rating" [readonly]="false"  ></app-star>
+              </p>
+                <a (click)="gotoMovie('trending', movie.id)" class="btn btn-primary">Details</a>
+              </div>
+            </div>
+
+          </div>
+          
         </div>
+         
+
+        </div>
+
         <div class="col col-sm-12 col-md-3">
-          hhdhduwhidiwdhu
+          <div class="box">
+            <h4>All movies</h4>
+
+            <div *ngFor="let movie of trendingMovies">
+              <div class="py-2 my-2 d-flex">
+                <h6 class=" col col-md-6  ">{{movie.name}}</h6>
+                <span class="col col-md-6 ms-5">
+                  <app-star [rating] = "movie.rating" [readonly]="false"  ></app-star>
+                </span>
+              </div>
+            </div>
+
+            <div *ngFor="let movie of thillerMovies">
+              <div class="py-2 my-2 d-flex">
+                <h6 class=" col col-md-6  ">{{movie.name}}</h6>
+                <span class="col col-md-6 ms-5">
+                  <app-star [rating] = "movie.rating" [readonly]="false"  ></app-star>
+                </span>
+              </div>
+            </div>
+
+            <div *ngFor="let pmovie of popularMovies">
+              <div class="py-2 my-2 d-flex">
+                <h6 class=" col col-md-6  ">{{pmovie.name}}</h6>
+                <span class="col col-md-6 ms-5">
+                  <app-star [rating] = "pmovie.rating" [readonly]="false"  ></app-star>
+                </span>
+              </div>
+            </div>
+
+
+          </div>
         </div>
       </div>
     </div>
